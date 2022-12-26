@@ -1,6 +1,9 @@
 import styles from './page.module.css';
 import Slider from './Slider';
 import Link from 'next/link';
+import SectionTwo from './SectionTwo';
+import SectionThree from './SectionThree';
+import SectionFour from './SectionFour';
 
 export default function Home() {
   return (
@@ -22,6 +25,9 @@ export default function Home() {
         </div>
         <Slider />
       </section>
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
     </main>
   );
 }
