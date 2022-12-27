@@ -28,7 +28,16 @@
   /* color: #033d92; */
   color: #001a4a;
   font-size: 4rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+.content hr {
+  width: 25%;
+  height: 3px;
+  border: none;
+  background-color: #001a4a;
+  margin: 0 0 1em;
+  border-radius: 10px;
 }
 
 .content p {

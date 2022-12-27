@@ -9,6 +9,7 @@ const SectionThree = (props: Props) => {
     <div className={styles.wrapper}>
       <div className={styles.lhs}>
         <h2>Management Students Association at a Glance</h2>
+        <hr />
         <div className={styles.stats__ctn}>
           <div className={styles.stats}>
             <h1>4K+</h1>

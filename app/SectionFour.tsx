@@ -9,14 +9,14 @@ const SectionFour = () => {
         <h2 className={styles.quote}>
           <span>&quot;</span>
           <i>
-            The Management students association is a non-profit organization and
-            its saddled with the responsibility of providing and catering for
-            the welfarism of her members. The association is made up of various
-            departments namely Nuasa,Asisa,Finsa,Bsa and Erhrmsa.
+            The management Students organization is a non-profit org that is
+            saddled with the responsibility of catering for the total welfarism
+            of her members. The association is made of up other departmental
+            associations namely: Asisa, BSA, Ermsa, Finsa, Nuasa.
           </i>
           <span>&quot;</span>
         </h2>
-        <h3 className={styles.name}>Femi Omolere - MSA President</h3>
+        <h3 className={styles.name}>Omolere Oluwafemi - MSA President</h3>
       </div>
       <div className={styles.image}>
         <Image

@@ -18,6 +18,7 @@ const SectonTwo = () => {
         />
         <div className={styles.content}>
           <h1>Learning Begins With Us</h1>
+          <hr />
           <p>
             Management Students Association; we are an independent
             student-interest organization in the University of Lagos with the

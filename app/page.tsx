@@ -4,6 +4,8 @@ import Link from 'next/link';
 import SectionTwo from './SectionTwo';
 import SectionThree from './SectionThree';
 import SectionFour from './SectionFour';
+import SectionFive from './SectionFive';
+import SectionSix from './SectionSix';
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
+      <SectionFive />
+      <SectionSix />
     </main>
   );
 }
