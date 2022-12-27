@@ -1,10 +1,14 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './header.module.css';
 import { BiChevronDown } from 'react-icons/bi';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className={styles.wrapper}>
       <div className={styles.inner}>
@@ -17,16 +21,16 @@ const Header = () => {
           />
         </Link>
         <ul className={styles.nav__links}>
-          <li>
+          <li className={pathname === '/' ? styles.active : ''}>
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li className={pathname === '/blog' ? styles.active : ''}>
             <Link href="/blog">Blog</Link>
           </li>
-          <li>
+          <li className={pathname === '/gallery' ? styles.active : ''}>
             <Link href="/gallery">Gallery</Link>
           </li>
-          <li>
+          <li className={pathname === '/associations' ? styles.active : ''}>
             <Link href="/associations">Associations</Link>
           </li>
           <li className={styles.dropdown}>
@@ -51,10 +55,10 @@ const Header = () => {
               <Link href="/events/other">Other Events</Link>
             </div>
           </li>
-          <li>
+          <li className={pathname === '/about' ? styles.active : ''}>
             <Link href="/about">About</Link>
           </li>
-          <li>
+          <li className={pathname === '/contact' ? styles.active : ''}>
             <Link href="/contact">Contact</Link>
           </li>
           <li className={styles.dropdown}>
