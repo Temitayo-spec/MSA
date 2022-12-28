@@ -59,7 +59,7 @@ const page = () => {
                 <span>”</span>
               </p>
 
-              <h3>Omofemi Omolere - President</h3>
+              <h3>Omolere Oluwafemi - President</h3>
             </div>
           </div>
 
