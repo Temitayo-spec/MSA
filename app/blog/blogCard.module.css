@@ -15,6 +15,7 @@
 .wrapper a:first-child {
   font-size: 3rem;
   color: #00a;
+  font-size: 600;
 }
 
 .wrapper a:last-child {

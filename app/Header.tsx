@@ -108,7 +108,7 @@ const Header = () => {
               <Link onClick={closeDropdowns} href="/associations">
                 Department Executives
               </Link>
-              <Link onClick={closeDropdowns} href="/events/other">
+              <Link onClick={closeDropdowns} href="/events/class-represetatives">
                 Class Representatives
               </Link>
             </div>
