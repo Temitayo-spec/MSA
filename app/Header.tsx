@@ -48,7 +48,11 @@ const Header = () => {
             <Link href="/gallery">Gallery</Link>
           </li>
           <li
-            className={pathname === '/associations' ? styles.active__link : ''}
+            className={
+              pathname === '/associations' || pathname?.includes('associations')
+                ? styles.active__link
+                : ''
+            }
           >
             <Link href="/associations">Associations</Link>
           </li>
@@ -108,7 +112,10 @@ const Header = () => {
               <Link onClick={closeDropdowns} href="/associations">
                 Department Executives
               </Link>
-              <Link onClick={closeDropdowns} href="/events/class-represetatives">
+              <Link
+                onClick={closeDropdowns}
+                href="/events/class-represetatives"
+              >
                 Class Representatives
               </Link>
             </div>
