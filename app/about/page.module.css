@@ -72,6 +72,10 @@
   width: 50%;
 }
 
+.quote__text i {
+  font-family: 'Dancing Script', cursive;
+}
+
 .quote__text p {
   font-size: 2rem;
   color: #999;
