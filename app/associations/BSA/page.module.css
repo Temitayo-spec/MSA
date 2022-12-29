@@ -1,7 +1,7 @@
 .banner {
   height: 80vh;
   width: 100%;
-  background: url(/images/associations/NUASA-1.png) no-repeat;
+  background: url(/images/bsa/BSA-banner.png) no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 0 0 100px 0;
@@ -84,4 +84,3 @@
   width: 100%;
   grid-gap: 1rem;
 }
-
