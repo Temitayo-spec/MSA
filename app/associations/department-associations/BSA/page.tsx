@@ -1,6 +1,6 @@
 import React from 'react'
-import { bsaData } from '../../../components/BsaData';
-import TeamCard from '../../TeamCard';
+import { bsaData } from '../../../../components/BsaData';
+import TeamCard from '../../../TeamCard';
 import styles from './page.module.css'
 
 const page = () => {

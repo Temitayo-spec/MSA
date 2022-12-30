@@ -1,6 +1,6 @@
 import React from 'react';
-import { erhrmsaData } from '../../../components/ErhrmsaData';
-import TeamCard from '../../TeamCard';
+import { finsaData } from '../../../../components/FinsaData';
+import TeamCard from '../../../TeamCard';
 import styles from './page.module.css';
 
 const page = () => {
@@ -8,20 +8,17 @@ const page = () => {
     <div className={styles.wrapper}>
       <div className={styles.banner}>
         <div className={styles.bannerText}>
-          <h1>ER&HRMSA</h1>
-          <p>
-            Employee Relations and Human Resources <br /> Management Student
-            Association
-          </p>
+          <h1>FINSA</h1>
+          <p>Finance Students Association</p>
         </div>
       </div>
       <main className={styles.main__content}>
         <header className={styles.header}>
           <h1>Our Team</h1>
-          <p>ER&HRMSA EXECUTIVES 21/22 (THE SYNERGY)</p>
+          <p>FINSA EXECUTIVES 21/22 (THE SYNERGY)</p>
         </header>
         <div className={styles.team__container}>
-          {erhrmsaData.map((data) => {
+          {finsaData.map((data) => {
             return <TeamCard data={data} key={data.name} />;
           })}
         </div>

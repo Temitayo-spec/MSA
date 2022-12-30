@@ -11,6 +11,7 @@ const Header = () => {
     [dropdownOne, setDropdownOne] = useState(false),
     [dropdownTwo, setDropdownTwo] = useState(false),
     [dropdownThree, setDropdownThree] = useState(false),
+    [dropdownFour, setDropdownFour] = useState(false),
     toggleDropdownOne = () => {
       setDropdownOne(!dropdownOne);
     },
@@ -20,10 +21,14 @@ const Header = () => {
     toggleDropdownThree = () => {
       setDropdownThree(!dropdownThree);
     },
+    toggleDropdownFour = () => {
+      setDropdownFour(!dropdownFour);
+    },
     closeDropdowns = () => {
       setDropdownOne(false);
       setDropdownTwo(false);
       setDropdownThree(false);
+      setDropdownFour(false);
     };
 
   return (
@@ -47,23 +52,19 @@ const Header = () => {
           <li className={pathname === '/gallery' ? styles.active__link : ''}>
             <Link href="/gallery">Gallery</Link>
           </li>
-          <li
-            className={
-              pathname === '/associations' || pathname?.includes('associations')
-                ? styles.active__link
-                : ''
-            }
-          >
-            <Link href="/associations">Associations</Link>
-          </li>
           <li className={styles.dropdown}>
             <div
               onClick={() => toggleDropdownOne()}
               className={`${styles.drop__box} ${
                 dropdownOne ? styles.active : ''
+              } ${
+                pathname === '/associations' ||
+                pathname?.includes('associations')
+                  ? styles.active__link
+                  : ''
               }`}
             >
-              <p>Events</p>
+              <p>Associations</p>
               <BiChevronDown className={styles.dropdown__icon} />
             </div>
             <div
@@ -71,23 +72,14 @@ const Header = () => {
                 dropdownOne ? styles.active : ''
               }`}
             >
-              <Link onClick={closeDropdowns} href="/events">
-                All Events
-              </Link>
-              <Link onClick={closeDropdowns} href="/activities/msa-events">
-                MSA Events
-              </Link>
               <Link
                 onClick={closeDropdowns}
-                href="/activities/msa-community-service"
+                href="/associations/department-associations"
               >
-                MSA Community Service
+                Department Associations
               </Link>
-              <Link onClick={closeDropdowns} href="/activities/msa-tutorials">
-                MSA Tutorials
-              </Link>
-              <Link onClick={closeDropdowns} href="/activities/msa-sports">
-                MSA Sports
+              <Link onClick={closeDropdowns} href="/associations/societies">
+                Societies
               </Link>
             </div>
           </li>
@@ -98,7 +90,7 @@ const Header = () => {
                 dropdownTwo ? styles.active : ''
               }`}
             >
-              <p>Leadership</p>
+              <p>Events</p>
               <BiChevronDown className={styles.dropdown__icon} />
             </div>
             <div
@@ -106,15 +98,50 @@ const Header = () => {
                 dropdownTwo ? styles.active : ''
               }`}
             >
-              <Link onClick={closeDropdowns} href="/events">
+              <Link onClick={closeDropdowns} href="/events/msa-events">
+                MSA Events
+              </Link>
+              <Link
+                onClick={closeDropdowns}
+                href="/events/msa-community-service"
+              >
+                MSA Community Service
+              </Link>
+              <Link onClick={closeDropdowns} href="/events/msa-tutorials">
+                MSA Tutorials
+              </Link>
+              <Link onClick={closeDropdowns} href="/events/msa-sports">
+                MSA Sports
+              </Link>
+            </div>
+          </li>
+          <li className={styles.dropdown}>
+            <div
+              onClick={() => toggleDropdownThree()}
+              className={`${styles.drop__box} ${
+                dropdownThree ? styles.active : ''
+              }`}
+            >
+              <p>Leadership</p>
+              <BiChevronDown className={styles.dropdown__icon} />
+            </div>
+            <div
+              className={`${styles.dropdown__content} ${
+                dropdownThree ? styles.active : ''
+              }`}
+            >
+              <Link onClick={closeDropdowns} href="/leadership/msa-executives">
                 MSA Executives
               </Link>
-              <Link onClick={closeDropdowns} href="/associations">
+              <Link
+                onClick={closeDropdowns}
+                href="/associations/department-associations"
+              >
                 Department Executives
               </Link>
               <Link
                 onClick={closeDropdowns}
-                href="/events/class-represetatives"
+                href="/leadership/class-represetatives"
               >
                 Class Representatives
               </Link>
@@ -128,9 +155,9 @@ const Header = () => {
           </li>
           <li className={styles.dropdown}>
             <div
-              onClick={() => toggleDropdownThree()}
+              onClick={() => toggleDropdownFour()}
               className={`${styles.drop__box} ${
-                dropdownThree ? styles.active : ''
+                dropdownFour ? styles.active : ''
               }`}
             >
               <p>Do Something</p>
@@ -138,7 +165,7 @@ const Header = () => {
             </div>
             <div
               className={`${styles.dropdown__content} ${
-                dropdownThree ? styles.active : ''
+                dropdownFour ? styles.active : ''
               }`}
             >
               <Link onClick={closeDropdowns} href="/do-something/volunteer">

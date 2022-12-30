@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { branchesData } from '../../components/BranchesData';
+import { branchesData } from '../../../components/BranchesData';
 import styles from './page.module.css';
 
 const page = () => {
