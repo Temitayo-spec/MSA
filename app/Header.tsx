@@ -88,6 +88,11 @@ const Header = () => {
               onClick={() => toggleDropdownTwo()}
               className={`${styles.drop__box} ${
                 dropdownTwo ? styles.active : ''
+              } ${
+                pathname === '/events' ||
+                pathname?.includes('events')
+                  ? styles.active__link
+                  : ''
               }`}
             >
               <p>Events</p>
@@ -120,6 +125,10 @@ const Header = () => {
               onClick={() => toggleDropdownThree()}
               className={`${styles.drop__box} ${
                 dropdownThree ? styles.active : ''
+              } ${
+                pathname === '/leadership' || pathname?.includes('leadership')
+                  ? styles.active__link
+                  : ''
               }`}
             >
               <p>Leadership</p>
@@ -141,7 +150,7 @@ const Header = () => {
               </Link>
               <Link
                 onClick={closeDropdowns}
-                href="/leadership/class-represetatives"
+                href="/leadership/class-representatives"
               >
                 Class Representatives
               </Link>
