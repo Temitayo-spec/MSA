@@ -1,34 +1,92 @@
 'use client';
 import React from 'react';
 import styles from './sectionThree.module.css';
+import { motion } from 'framer-motion';
 
-type Props = {};
+const SectionThree = () => {
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-const SectionThree = (props: Props) => {
+  const textVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+  
+  const smallTextVariants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+  };
   return (
     <div className={styles.wrapper}>
-      <div className={styles.lhs}>
-        <h2>Management Students Association at a Glance</h2>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 1 }}
+        className={styles.lhs}
+      >
+        <motion.h2 variants={textVariants}>
+          Management Students Association at a Glance
+        </motion.h2>
         <hr />
-        <div className={styles.stats__ctn}>
-          <div className={styles.stats}>
-            <h1>4K+</h1>
-            <p>Students Enrollments</p>
-          </div>
-          <div className={styles.stats}>
-            <h1>50+</h1>
-            <p>Excos</p>
-          </div>
-          <div className={styles.stats}>
-            <h1>40+</h1>
-            <p>Events & Activities</p>
-          </div>
-          <div className={styles.stats}>
-            <h1>100+</h1>
-            <p>Faculty Lecturers</p>
-          </div>
-        </div>
-      </div>
+        <motion.div className={styles.stats__ctn}>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 1 }}
+            className={styles.stats}
+          >
+            <motion.h1 variants={textVariants}>4K+</motion.h1>
+            <motion.p variants={smallTextVariants}>Students Enrollments</motion.p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 1 }}
+            className={styles.stats}
+          >
+            <motion.h1 variants={textVariants}>50+</motion.h1>
+            <motion.p variants={smallTextVariants}>Excos</motion.p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 1 }}
+            className={styles.stats}
+          >
+            <motion.h1 variants={textVariants}>40+</motion.h1>
+            <motion.p variants={smallTextVariants}>Events & Activities</motion.p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 1 }}
+            className={styles.stats}
+          >
+            <motion.h1 variants={textVariants}>100+</motion.h1>
+            <motion.p variants={smallTextVariants}>Faculty Lecturers</motion.p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
       <div className={styles.video}>
         <video width="500" height="500" controls>

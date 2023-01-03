@@ -3,33 +3,79 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './footer.module.css';
 import { FaInstagram, FaTiktok, FaTwitter } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-type Props = {};
+const Footer = () => {
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+        duration: 2,
+      },
+    },
+  };
 
-const Footer = (props: Props) => {
+  const textVariants = {
+    hidden: { x: 20, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+  };
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footer__content}>
-        <div className={styles.footer__content__top}>
-          <div className={styles.footer__content__top__left}>
-            <h2>Management Students Association</h2>
-            <p>MSA Office,</p>
-            <p>Faculty of Management Sciences,</p>
-            <p>University of Lagos</p>
-          </div>
-          <div className={styles.footer__content__top__middle}>
-            <h2>Main Office</h2>
-            <p>President</p>
-            <p>+234 8152522529</p>
-            <p>8:00am - 4:00pm</p>
-          </div>
-          <div className={styles.footer__content__top__right}>
-            <h2>Information</h2>
-            <p>General Enquires</p>
-            <p>+234 8189749192</p>
-            <p>msaunilag@outlook.com</p>
-          </div>
-        </div>
+    <motion.footer className={styles.footer}>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        className={styles.footer__content}
+      >
+        <motion.div className={styles.footer__content__top}>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            className={styles.footer__content__top__left}
+          >
+            <motion.h2 variants={textVariants}>
+              Management Students Association
+            </motion.h2>
+            <motion.p variants={textVariants}>MSA Office,</motion.p>
+            <motion.p variants={textVariants}>
+              Faculty of Management Sciences,
+            </motion.p>
+            <motion.p variants={textVariants}>University of Lagos</motion.p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            className={styles.footer__content__top__middle}
+          >
+            <motion.h2 variants={textVariants}>Main Office</motion.h2>
+            <motion.p variants={textVariants}>President</motion.p>
+            <motion.p variants={textVariants}>+234 8152522529</motion.p>
+            <motion.p variants={textVariants}>8:00am - 4:00pm</motion.p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            className={styles.footer__content__top__right}
+          >
+            <motion.h2 variants={textVariants}>Information</motion.h2>
+            <motion.p variants={textVariants}>General Enquires</motion.p>
+            <motion.p variants={textVariants}>+234 8189749192</motion.p>
+            <motion.p variants={textVariants}>msaunilag@outlook.com</motion.p>
+          </motion.div>
+        </motion.div>
         <div className={styles.footer__content__bottom}>
           <div className={styles.footer__content__bottom__left}>
             <Image
@@ -39,7 +85,13 @@ const Footer = (props: Props) => {
               alt="msa-footer-logo"
             />
           </div>
-          <div className={styles.footer__content__bottom__middle}>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+            className={styles.footer__content__bottom__middle}
+          >
             <Link href="/">Home</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/gallery">Gallery</Link>
@@ -49,7 +101,7 @@ const Footer = (props: Props) => {
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/do-something">Do Something</Link>
-          </div>
+          </motion.div>
           <div className={styles.footer__content__bottom__right}>
             <Link href="">
               <FaTwitter />
@@ -62,8 +114,8 @@ const Footer = (props: Props) => {
             </Link>
           </div>
         </div>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 };
 

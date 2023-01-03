@@ -90,6 +90,8 @@
 
 .active p {
   color: #1721dd;
+  font-weight: 700;
+  font-size: 1em;
 }
 
 .active .dropdown__icon {
@@ -110,4 +112,6 @@
 
 .active__link {
   color: #1721dd;
+  font-weight: 700;
+  font-size: 1em;
 }

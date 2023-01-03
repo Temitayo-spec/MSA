@@ -36,17 +36,19 @@
 
 .main__content button {
   background: #fff;
-  color: #000;
+  color: #001a4a;
   padding: 1rem 2rem;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   text-transform: uppercase;
+  box-shadow: 0 0 10px #000;
 }
 
 .main__content button:hover {
-  background: #25274d;
+  background: #001a4a;
   color: #fff;
 }
 
