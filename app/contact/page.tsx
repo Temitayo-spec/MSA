@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { CiLocationOn, CiMail, CiPhone } from 'react-icons/ci';
 import styles from './page.module.css';
@@ -5,11 +6,11 @@ import gsap from 'gsap';
 import Transition from '../Transition';
 
 const page = () => {
-const contact = gsap.timeline();
+  const contact = gsap.timeline();
 
   return (
     <>
-    <Transition timeline={contact} text="Contact Us" />
+      <Transition timeline={contact} text="Contact Us" />
       <div className={styles.wrapper}>
         <div className={styles.banner}>
           <h1>Contact Us</h1>

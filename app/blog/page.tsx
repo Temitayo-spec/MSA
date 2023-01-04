@@ -1,3 +1,4 @@
+'use client';
 import { BlogData } from '../../components/BlogData';
 import BlogCard from './BlogCard';
 import gsap from 'gsap';

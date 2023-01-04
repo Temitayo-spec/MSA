@@ -1,3 +1,4 @@
+'use client';
 import styles from './page.module.css';
 import Faculty from './Faculty';
 import Exco from './Exco';
