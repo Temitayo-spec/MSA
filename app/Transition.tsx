@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useEffect, useRef } from 'react';
 import styles from './transition.module.css';
 import { Power3 } from 'gsap';
@@ -12,6 +12,16 @@ const Transition = ({ timeline, text }: Props) => {
   const trans = useRef(null);
   useEffect(() => {
     timeline
+      .to(
+        trans.current,
+        {
+          duration: 0.8,
+          scaleY: 1,
+          ease: Power3.easeOut,
+          transformOrigin: 'top',
+        },
+        '0'
+      )
       .to(trans.current, {
         duration: 0.5,
         scaleY: 0,

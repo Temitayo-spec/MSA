@@ -6,7 +6,7 @@
   height: 100vh;
   background-color: #001a4a;
   z-index: 9999;
-  transform: scaleY(1);
+  transform: scaleY(0);
 }
 
 .transition__inner {
