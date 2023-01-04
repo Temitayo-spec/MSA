@@ -10,31 +10,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [preloader, setPreloader] = useState(true);
+  // const [preloader, setPreloader] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setPreloader(false);
-    }, 7000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setPreloader(false);
+  //   }, 7000);
+  // }, []);
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
 
       <body>
-        {preloader ? (
+        {/* {preloader ? (
           <Preloader />
         ) : (
-          <>
+          <> */}
             <Header />
             {children}
             <Footer />
-          </>
-        )}
+          {/* </>
+        )} */}
       </body>
     </html>
   );
