@@ -29,7 +29,7 @@ const Transition = ({ timeline, text }: Props) => {
         transformOrigin: 'bottom',
         delay: 1,
       });
-  }, []);
+  });
   return (
     <div className={styles.transition__wrapper} ref={trans}>
       <div className={styles.transition__inner}>{text}</div>

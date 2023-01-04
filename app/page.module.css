@@ -3,6 +3,11 @@
   height: 80vh;
 }
 
+.main {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
 .section__a__content {
   z-index: 10;
   position: absolute;

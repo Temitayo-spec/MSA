@@ -1,4 +1,5 @@
-"use client"
+'use client';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import React from 'react';
 import Accordion from '../Accordion';
@@ -6,13 +7,28 @@ import styles from './page.module.css';
 import gsap from 'gsap';
 import Transition from '../Transition';
 
-const page = () => {
+const Page = () => {
   const about = gsap.timeline();
+  const aboutCtn = useRef(null);
+
+  useEffect(() => {
+    about.to(
+      aboutCtn.current,
+      {
+        duration: 0.5,
+        scaleY: 1,
+        opacity: 1,
+        ease: 'power3.out',
+        transformOrigin: 'top',
+      },
+      '-=0.5'
+    );
+  });
 
   return (
     <>
-    <Transition timeline={about} text="About" />
-      <div className={styles.wrapper}>
+      <Transition timeline={about} text="About" />
+      <div className={styles.wrapper} ref={aboutCtn}>
         <div className={styles.banner}>
           <div className={styles.banner__text}>
             <h1>Who We Are?</h1>
@@ -127,4 +143,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

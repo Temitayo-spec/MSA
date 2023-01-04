@@ -1,17 +1,32 @@
 'use client';
-import React from 'react';
+import {useEffect, useRef} from 'react';
 import { CiLocationOn, CiMail, CiPhone } from 'react-icons/ci';
 import styles from './page.module.css';
 import gsap from 'gsap';
 import Transition from '../Transition';
 
-const page = () => {
+const Page = () => {
   const contact = gsap.timeline();
+    const contactCtn = useRef(null);
+
+  useEffect(() => {
+    contact.to(
+      contactCtn.current,
+      {
+        duration: 0.5,
+        scaleY: 1,
+        opacity: 1,
+        ease: 'power3.out',
+        transformOrigin: 'top',
+      },
+      '-=0.5'
+    );
+  });
 
   return (
     <>
       <Transition timeline={contact} text="Contact Us" />
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} ref={contactCtn}>
         <div className={styles.banner}>
           <h1>Contact Us</h1>
           <p>
@@ -78,4 +93,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

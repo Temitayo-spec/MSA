@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './page.module.css';
 import Slider from './Slider';
 import Link from 'next/link';
@@ -34,12 +34,25 @@ export default function Home() {
   };
 
   const home = gsap.timeline();
-  const [isLoaded, setIsLoaded] = useState(false);
+  const homeCtn = useRef(null);
 
+  useEffect(() => {
+    home.to(
+      homeCtn.current,
+      {
+        duration: 0.5,
+        scaleY: 1,
+        opacity: 1,
+        ease: 'power3.out',
+        transformOrigin: 'top',
+      },
+      '-=0.5'
+    );
+  });
   return (
     <>
-      <Transition timeline={home} text='Home' />
-      <main className={styles.main}>
+      <Transition timeline={home} text="Home" />
+      <main ref={homeCtn} className={styles.main}>
         <section className={styles.section__a}>
           <motion.div className={styles.section__a__content}>
             <motion.div
